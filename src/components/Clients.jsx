@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
+import styles from "../styles";
+import { clients } from "../constants";
 
 const Clients = () => {
   return (
-    <div>Clients</div>
-  )
-}
+    <section className={`${styles.flexCenter} my-4`}>
+      <div className={`${styles.flexCenter} flex-wrap w-full`}>
+        {clients.map((client) => (
+          <div
+            key={client.id}
+            className={`${styles.flexCenter} flex-1 sm:min-w-[192px] min-w-[120px]`}
+          >
+            <img
+              src={client.logo}
+              alt=""
+              className="sm:w-[192px] w-[100px] object-contain shadowfilter transform transition-transform hover:scale-110 duration-700 ease-in-out "
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-export default Clients
+export default Clients;
